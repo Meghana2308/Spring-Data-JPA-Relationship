@@ -17,9 +17,9 @@ public class TeacherController {
         return teacherService.getAllTeachers();
     }
 
-    @GetMapping("getid")
-    public Teacher getTeacherById(@RequestParam("id") int id) {
-        return teacherService.getTeacherById(id);
+    @GetMapping("/getTeacher/{teacherId}")
+    public Teacher getTeacherById(@RequestParam("teacherId") int teacherId) {
+        return teacherService.getTeacherById(teacherId);
     }
 
     @PostMapping("/addTeacher")

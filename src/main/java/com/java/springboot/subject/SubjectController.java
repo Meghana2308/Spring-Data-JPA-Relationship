@@ -25,6 +25,11 @@ public class SubjectController {
         return subjectService.getAllSubjects();
     }
 
+    @GetMapping("/getSubject/{subjectId}")
+    public Subject getSubject(@PathVariable int subjectId) {
+        return subjectService.getSubjectById(subjectId);
+    }
+
     @PostMapping("/addSubject")
     public Subject saveSubject(@RequestBody Subject subject) {
         return subjectService.saveSubject(subject);

@@ -21,7 +21,7 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int studentId;
 
-    private String name;
+    private String StudentName;
 
     // Many-to-Many with Subjects
     @ManyToMany

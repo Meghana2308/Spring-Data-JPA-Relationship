@@ -12,17 +12,17 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("/getData")
+    @GetMapping("/getStudent")
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
-    @GetMapping("/getbynumber")
-    public Student getStudentByNumber(@RequestParam int number) {
-        return studentService.getStudentById(number);
+    @GetMapping("/getStudent/{studentId}")
+    public Student getStudentByNumber(@RequestParam int studentId) {
+        return studentService.getStudentById(studentId);
     }
 
-    @PostMapping("/addData")
+    @PostMapping("/addStudent")
     public Student saveStudent(@RequestBody Student student) {
         return studentService.saveStudent(student);
     }

@@ -22,14 +22,14 @@ public class Teacher {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int teacherId;
 
-        private String name;
+        private String teacherName;
 
         @JsonIgnore
         @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
         private Set<Subject> subjects = new HashSet<>();
 
         public void assignSubject(Subject subject) {
-                subjects.add(subject);
-                subject.setTeacher(this);
+                this.subjects.add(subject);
+
         }
 }
